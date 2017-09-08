@@ -68,6 +68,13 @@
 	<!-- Covers rule: ... while spaces can be used mid-line for alignment. -->
 	<rule ref="WordPress.WhiteSpace.DisallowInlineTabs"/>
 
+	<!-- Implied through the examples: align the assignment operator in a block of assignments. -->
+	<rule ref="Generic.Formatting.MultipleStatementAlignment">
+		<properties>
+			<property name="maxPadding" value="40"/>
+		</properties>
+	</rule>
+
 	<!--
 	#############################################################################
 	Handbook: PHP - Brace Style.
