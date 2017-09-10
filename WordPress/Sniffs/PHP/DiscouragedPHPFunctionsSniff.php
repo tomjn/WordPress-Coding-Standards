@@ -36,7 +36,7 @@ class DiscouragedPHPFunctionsSniff extends AbstractFunctionRestrictionsSniff {
 	 */
 	public function getGroups() {
 		return array(
-			'create_function' => array(
+			'create_function'       => array(
 				'type'      => 'warning',
 				'message'   => '%s() is discouraged, please use anonymous functions instead.',
 				'functions' => array(
@@ -44,7 +44,7 @@ class DiscouragedPHPFunctionsSniff extends AbstractFunctionRestrictionsSniff {
 				),
 			),
 
-			'serialize' => array(
+			'serialize'             => array(
 				'type'      => 'warning',
 				'message'   => '%s() found. Serialized data has known vulnerability problems with Object Injection. JSON is generally a better approach for serializing data. See https://www.owasp.org/index.php/PHP_Object_Injection',
 				'functions' => array(
@@ -53,7 +53,7 @@ class DiscouragedPHPFunctionsSniff extends AbstractFunctionRestrictionsSniff {
 				),
 			),
 
-			'urlencode' => array(
+			'urlencode'             => array(
 				'type'      => 'warning',
 				'message'   => '%s() should only be used when dealing with legacy applications rawurlencode() should now be used instead. See http://php.net/manual/en/function.rawurlencode.php and http://www.faqs.org/rfcs/rfc3986.html',
 				'functions' => array(
@@ -82,7 +82,7 @@ class DiscouragedPHPFunctionsSniff extends AbstractFunctionRestrictionsSniff {
 				),
 			),
 
-			'system_calls' => array(
+			'system_calls'          => array(
 				'type'      => 'warning',
 				'message'   => '%s() found. PHP system calls are often disabled by server admins.',
 				'functions' => array(
@@ -95,7 +95,7 @@ class DiscouragedPHPFunctionsSniff extends AbstractFunctionRestrictionsSniff {
 				),
 			),
 
-			'obfuscation' => array(
+			'obfuscation'           => array(
 				'type'      => 'warning',
 				'message'   => '%s() can be used to obfuscate code which is strongly discouraged. Please verify that the function is used for benign reasons.',
 				'functions' => array(

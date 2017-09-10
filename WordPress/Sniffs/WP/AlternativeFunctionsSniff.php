@@ -36,7 +36,7 @@ class AlternativeFunctionsSniff extends AbstractFunctionRestrictionsSniff {
 	 */
 	public function getGroups() {
 		return array(
-			'curl' => array(
+			'curl'              => array(
 				'type'      => 'warning',
 				'message'   => 'Using cURL functions is highly discouraged. Use wp_remote_get() instead.',
 				'functions' => array(
@@ -44,7 +44,7 @@ class AlternativeFunctionsSniff extends AbstractFunctionRestrictionsSniff {
 				),
 			),
 
-			'parse_url' => array(
+			'parse_url'         => array(
 				'type'      => 'warning',
 				'message'   => '%s() is discouraged because of inconsistency in the output across PHP versions; use wp_parse_url() instead.',
 				'functions' => array(
@@ -52,7 +52,7 @@ class AlternativeFunctionsSniff extends AbstractFunctionRestrictionsSniff {
 				),
 			),
 
-			'json_encode' => array(
+			'json_encode'       => array(
 				'type'      => 'warning',
 				'message'   => '%s() is discouraged. Use wp_json_encode() instead.',
 				'functions' => array(
@@ -68,7 +68,7 @@ class AlternativeFunctionsSniff extends AbstractFunctionRestrictionsSniff {
 				),
 			),
 
-			'file_system_read' => array(
+			'file_system_read'  => array(
 				'type'      => 'warning',
 				'message'   => 'File operations should use WP_Filesystem methods instead of direct PHP filesystem calls. Found: %s()',
 				'functions' => array(

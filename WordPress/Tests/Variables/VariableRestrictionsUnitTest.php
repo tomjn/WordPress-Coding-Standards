@@ -29,7 +29,7 @@ class VariableRestrictionsUnitTest extends AbstractSniffUnitTest {
 		parent::setUp();
 
 		AbstractVariableRestrictionsSniff::$groups = array(
-			'test' => array(
+			'test'    => array(
 				'type'          => 'error',
 				'message'       => 'Detected usage of %s',
 				'object_vars'   => array(
@@ -79,8 +79,8 @@ class VariableRestrictionsUnitTest extends AbstractSniffUnitTest {
 	 */
 	public function getErrorList() {
 		return array(
-			3 => 1,
-			5 => 1,
+			3  => 1,
+			5  => 1,
 			11 => 1,
 			15 => 1,
 			17 => 1,

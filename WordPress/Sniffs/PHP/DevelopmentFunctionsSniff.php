@@ -36,7 +36,7 @@ class DevelopmentFunctionsSniff extends AbstractFunctionRestrictionsSniff {
 	 */
 	public function getGroups() {
 		return array(
-			'error_log' => array(
+			'error_log'               => array(
 				'type'      => 'warning',
 				'message'   => '%s() found. Debug code should not normally be used in production.',
 				'functions' => array(

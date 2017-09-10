@@ -36,7 +36,7 @@ class DiscouragedFunctionsSniff extends AbstractFunctionRestrictionsSniff {
 	 */
 	public function getGroups() {
 		return array(
-			'query_posts' => array(
+			'query_posts'    => array(
 				'type'      => 'warning',
 				'message'   => '%s() is discouraged. Use WP_Query instead.',
 				'functions' => array(

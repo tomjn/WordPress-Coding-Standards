@@ -48,13 +48,13 @@ class RestrictedFunctionsSniff extends AbstractFunctionRestrictionsSniff {
 	public function getGroups() {
 		return array(
 			// @link https://vip.wordpress.com/documentation/vip/code-review-what-we-look-for/#switch_to_blog
-			'switch_to_blog' => array(
+			'switch_to_blog'                 => array(
 				'type'      => 'error',
 				'message'   => '%s() is not something you should ever need to do in a VIP theme context. Instead use an API (XML-RPC, REST) to interact with other sites if needed.',
 				'functions' => array( 'switch_to_blog' ),
 			),
 
-			'file_get_contents' => array(
+			'file_get_contents'              => array(
 				'type'      => 'warning',
 				'message'   => '%s() is highly discouraged, please use wpcom_vip_file_get_contents() instead.',
 				'functions' => array(
@@ -63,7 +63,7 @@ class RestrictedFunctionsSniff extends AbstractFunctionRestrictionsSniff {
 				),
 			),
 
-			'wpcom_vip_get_term_link' => array(
+			'wpcom_vip_get_term_link'        => array(
 				'type'      => 'error',
 				'message'   => '%s() is deprecated, please use get_term_link(), get_tag_link(), or get_category_link() instead.',
 				'functions' => array(
@@ -71,7 +71,7 @@ class RestrictedFunctionsSniff extends AbstractFunctionRestrictionsSniff {
 				),
 			),
 
-			'get_page_by_path' => array(
+			'get_page_by_path'               => array(
 				'type'      => 'error',
 				'message'   => '%s() is prohibited, please use wpcom_vip_get_page_by_path() instead.',
 				'functions' => array(
@@ -79,7 +79,7 @@ class RestrictedFunctionsSniff extends AbstractFunctionRestrictionsSniff {
 				),
 			),
 
-			'get_page_by_title' => array(
+			'get_page_by_title'              => array(
 				'type'      => 'error',
 				'message'   => '%s() is prohibited, please use wpcom_vip_get_page_by_title() instead.',
 				'functions' => array(
@@ -87,7 +87,7 @@ class RestrictedFunctionsSniff extends AbstractFunctionRestrictionsSniff {
 				),
 			),
 
-			'wpcom_vip_get_term_by' => array(
+			'wpcom_vip_get_term_by'          => array(
 				'type'      => 'error',
 				'message'   => '%s() is deprecated, please use get_term_by() or get_cat_ID() instead.',
 				'functions' => array(
@@ -103,7 +103,7 @@ class RestrictedFunctionsSniff extends AbstractFunctionRestrictionsSniff {
 				),
 			),
 
-			'url_to_postid' => array(
+			'url_to_postid'                  => array(
 				'type'      => 'error',
 				'message'   => '%s() is prohibited, please use wpcom_vip_url_to_postid() instead.',
 				'functions' => array(
@@ -112,7 +112,7 @@ class RestrictedFunctionsSniff extends AbstractFunctionRestrictionsSniff {
 				),
 			),
 
-			'attachment_url_to_postid' => array(
+			'attachment_url_to_postid'       => array(
 				'type'      => 'error',
 				'message'   => '%s() is prohibited, please use wpcom_vip_attachment_url_to_postid() instead.',
 				'functions' => array(
@@ -121,7 +121,7 @@ class RestrictedFunctionsSniff extends AbstractFunctionRestrictionsSniff {
 			),
 
 			// @link https://vip.wordpress.com/documentation/vip/code-review-what-we-look-for/#remote-calls
-			'wp_remote_get' => array(
+			'wp_remote_get'                  => array(
 				'type'      => 'warning',
 				'message'   => '%s() is highly discouraged, please use vip_safe_wp_remote_get() instead.',
 				'functions' => array(
@@ -130,7 +130,7 @@ class RestrictedFunctionsSniff extends AbstractFunctionRestrictionsSniff {
 			),
 
 			// @link https://vip.wordpress.com/documentation/vip/code-review-what-we-look-for/#custom-roles
-			'custom_role' => array(
+			'custom_role'                    => array(
 				'type'      => 'error',
 				'message'   => 'Use wpcom_vip_add_role() instead of %s()',
 				'functions' => array(
@@ -139,7 +139,7 @@ class RestrictedFunctionsSniff extends AbstractFunctionRestrictionsSniff {
 			),
 
 			// @link https://vip.wordpress.com/documentation/vip/code-review-what-we-look-for/#caching-constraints
-			'cookies' => array(
+			'cookies'                        => array(
 				'type'      => 'warning',
 				'message'   => 'Due to using Batcache, server side based client related logic will not work, use JS instead.',
 				'functions' => array(
@@ -148,7 +148,7 @@ class RestrictedFunctionsSniff extends AbstractFunctionRestrictionsSniff {
 			),
 
 			// @link https://vip.wordpress.com/documentation/vip/code-review-what-we-look-for/#working-with-wp_users-and-user_meta
-			'user_meta' => array(
+			'user_meta'                      => array(
 				'type'      => 'error',
 				'message'   => '%s() usage is highly discouraged, check VIP documentation on "Working with wp_users"',
 				'functions' => array(
@@ -160,7 +160,7 @@ class RestrictedFunctionsSniff extends AbstractFunctionRestrictionsSniff {
 			),
 
 			// @todo Introduce a sniff specific to get_posts() that checks for suppress_filters=>false being supplied.
-			'get_posts' => array(
+			'get_posts'                      => array(
 				'type'      => 'warning',
 				'message'   => '%s() is discouraged in favor of creating a new WP_Query() so that Advanced Post Cache will cache the query, unless you explicitly supply suppress_filters => false.',
 				'functions' => array(
@@ -170,7 +170,7 @@ class RestrictedFunctionsSniff extends AbstractFunctionRestrictionsSniff {
 				),
 			),
 
-			'term_exists' => array(
+			'term_exists'                    => array(
 				'type'      => 'error',
 				'message'   => '%s() is highly discouraged due to not being cached; please use wpcom_vip_term_exists() instead.',
 				'functions' => array(
@@ -178,7 +178,7 @@ class RestrictedFunctionsSniff extends AbstractFunctionRestrictionsSniff {
 				),
 			),
 
-			'count_user_posts' => array(
+			'count_user_posts'               => array(
 				'type'      => 'error',
 				'message'   => '%s() is highly discouraged due to not being cached; please use wpcom_vip_count_user_posts() instead.',
 				'functions' => array(
@@ -186,7 +186,7 @@ class RestrictedFunctionsSniff extends AbstractFunctionRestrictionsSniff {
 				),
 			),
 
-			'wp_old_slug_redirect' => array(
+			'wp_old_slug_redirect'           => array(
 				'type'      => 'error',
 				'message'   => '%s() is highly discouraged due to not being cached; please use wpcom_vip_old_slug_redirect() instead.',
 				'functions' => array(
@@ -194,7 +194,7 @@ class RestrictedFunctionsSniff extends AbstractFunctionRestrictionsSniff {
 				),
 			),
 
-			'get_adjacent_post' => array(
+			'get_adjacent_post'              => array(
 				'type'      => 'error',
 				'message'   => '%s() is highly discouraged due to not being cached; please use wpcom_vip_get_adjacent_post() instead.',
 				'functions' => array(
@@ -206,7 +206,7 @@ class RestrictedFunctionsSniff extends AbstractFunctionRestrictionsSniff {
 				),
 			),
 
-			'get_intermediate_image_sizes' => array(
+			'get_intermediate_image_sizes'   => array(
 				'type'      => 'error',
 				'message'   => 'Intermediate images do not exist on the VIP platform, and thus get_intermediate_image_sizes() returns an empty array() on the platform. This behavior is intentional to prevent WordPress from generating multiple thumbnails when images are uploaded.',
 				'functions' => array(
@@ -215,8 +215,8 @@ class RestrictedFunctionsSniff extends AbstractFunctionRestrictionsSniff {
 			),
 
 			// @link https://vip.wordpress.com/documentation/vip/code-review-what-we-look-for/#use-wp_safe_redirect-instead-of-wp_redirect
-			'wp_redirect' => array(
-				'type'     => 'warning',
+			'wp_redirect'                    => array(
+				'type'      => 'warning',
 				'message'   => '%s() found. Using wp_safe_redirect(), along with the allowed_redirect_hosts filter, can help avoid any chances of malicious redirects within code. It is also important to remember to call exit() after a redirect so that no other unwanted code is executed.',
 				'functions' => array(
 					'wp_redirect',
@@ -224,7 +224,7 @@ class RestrictedFunctionsSniff extends AbstractFunctionRestrictionsSniff {
 			),
 
 			// @link https://vip.wordpress.com/documentation/vip/code-review-what-we-look-for/#mobile-detection
-			'wp_is_mobile' => array(
+			'wp_is_mobile'                   => array(
 				'type'      => 'error',
 				'message'   => '%s() found. When targeting mobile visitors, jetpack_is_mobile() should be used instead of wp_is_mobile. It is more robust and works better with full page caching.',
 				'functions' => array(

@@ -74,11 +74,11 @@ class AdminBarRemovalSniff extends AbstractFunctionParameterSniff {
 			'type'  => '!=',
 			'value' => 'hidden',
 		),
-		'display' => array(
+		'display'    => array(
 			'type'  => '!=',
 			'value' => 'none',
 		),
-		'opacity' => array(
+		'opacity'    => array(
 			'type'  => '>',
 			'value' => 0.3,
 		),

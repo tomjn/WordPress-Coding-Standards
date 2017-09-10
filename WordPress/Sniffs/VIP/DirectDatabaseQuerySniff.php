@@ -78,15 +78,15 @@ class DirectDatabaseQuerySniff extends Sniff {
 	 * @var array[]
 	 */
 	protected $methods = array(
-		'cachable' => array(
-			'delete' => true,
-			'get_var' => true,
-			'get_col' => true,
-			'get_row' => true,
+		'cachable'    => array(
+			'delete'      => true,
+			'get_var'     => true,
+			'get_col'     => true,
+			'get_row'     => true,
 			'get_results' => true,
-			'query' => true,
-			'replace' => true,
-			'update' => true,
+			'query'       => true,
+			'replace'     => true,
+			'update'      => true,
 		),
 		'noncachable' => array(
 			'insert' => true,

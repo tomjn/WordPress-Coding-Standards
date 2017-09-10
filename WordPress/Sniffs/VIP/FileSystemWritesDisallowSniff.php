@@ -47,7 +47,7 @@ class FileSystemWritesDisallowSniff extends AbstractFunctionRestrictionsSniff {
 	 */
 	public function getGroups() {
 		$groups = array(
-			'file_ops' => array(
+			'file_ops'  => array(
 				'type'      => 'error',
 				'message'   => 'Filesystem writes are forbidden, you should not be using %s()',
 				'functions' => array(
@@ -76,7 +76,7 @@ class FileSystemWritesDisallowSniff extends AbstractFunctionRestrictionsSniff {
 					'rmdir',
 				),
 			),
-			'chmod' => array(
+			'chmod'     => array(
 				'type'      => 'error',
 				'message'   => 'Filesystem writes are forbidden, you should not be using %s()',
 				'functions' => array(

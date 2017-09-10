@@ -41,7 +41,7 @@ class POSIXFunctionsSniff extends AbstractFunctionRestrictionsSniff {
 	 */
 	public function getGroups() {
 		return array(
-			'ereg' => array(
+			'ereg'         => array(
 				'type'      => 'error',
 				'message'   => '%s() has been deprecated since PHP 5.3 and removed in PHP 7.0, please use preg_match() instead.',
 				'functions' => array(
@@ -60,7 +60,7 @@ class POSIXFunctionsSniff extends AbstractFunctionRestrictionsSniff {
 				),
 			),
 
-			'split' => array(
+			'split'        => array(
 				'type'      => 'error',
 				'message'   => '%s() has been deprecated since PHP 5.3 and removed in PHP 7.0, please use explode(), str_split() or preg_split() instead.',
 				'functions' => array(
