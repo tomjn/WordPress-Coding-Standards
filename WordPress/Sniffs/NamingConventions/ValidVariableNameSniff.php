@@ -199,7 +199,7 @@ class ValidVariableNameSniff extends PHPCS_AbstractVariableSniff {
 			}
 
 			if ( isset( $error, $error_name ) ) {
-				$data  = array( $original_var_name );
+				$data = array( $original_var_name );
 				$phpcs_file->addError( $error, $stack_ptr, $error_name, $data );
 			}
 		}
@@ -324,6 +324,7 @@ class ValidVariableNameSniff extends PHPCS_AbstractVariableSniff {
 				$customProperties,
 				$this->whitelisted_mixed_case_member_var_names
 			);
+
 			$this->addedCustomProperties['properties'] = $this->customPropertiesWhitelist;
 			$this->addedCustomProperties['variables']  = $this->customVariablesWhitelist;
 		}

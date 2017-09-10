@@ -225,7 +225,7 @@ class PreparedSQLSniff extends Sniff {
 		}
 
 		$methodPtr = $this->phpcsFile->findNext( array( T_WHITESPACE ), ( $is_object_call + 1 ), null, true, null, true );
-		$method = $this->tokens[ $methodPtr ]['content'];
+		$method    = $this->tokens[ $methodPtr ]['content'];
 
 		// Find the opening parenthesis.
 		$opening_paren = $this->phpcsFile->findNext( T_WHITESPACE, ( $methodPtr + 1 ), null, true, null, true );
